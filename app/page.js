@@ -13,7 +13,19 @@ export default function Home() {
       subtitle: 'here is learn some next.js and mongoose',
       image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
       tag: 'react.js',
-    }
+    },
+    {
+      title:'new technology learn',
+      subtitle: 'here is learn some next.js and mongoose',
+      image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
+      tag: 'react.js',
+    },
+    {
+      title:'new technology learn',
+      subtitle: 'here is learn some next.js and mongoose',
+      image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
+      tag: 'react.js',
+    },
   ])
   const [ selectedTags, setSelectedTags ] = useState([])
   const [ error, setError ] = useState(null)
@@ -75,6 +87,13 @@ export default function Home() {
         selectedTags?.length !== 0 && posts?.filter((post) =>{
           return selectedTags.includes(post.tag)
         }).map(post => {
+          return (
+            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.image}  />
+          )
+        })
+      }
+      {
+        selectedTags?.length === 0 && posts?.map(post => {
           return (
             <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.image}  />
           )

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export const BlogCard = ({ tag, title, image, id}) => {
+export const BlogCard = ({ tag, title, image, desc, id}) => {
   return (
     <div>BlogCard
         <Link href={`/post/${id}`}>

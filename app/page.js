@@ -76,7 +76,7 @@ export default function Home() {
           return selectedTags.includes(post.tag)
         }).map(post => {
           return (
-            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.subtitle} img={post?.image}  />
+            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.image}  />
           )
         })
       }

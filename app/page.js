@@ -21,9 +21,26 @@ export default function Home() {
     }
   },[])
 
+  if(posts?.length === 0){
+    return <div className='text-center'>no post found...</div>
+  }
+  if(error){
+    return (
+      <div className='text-center text-4xl mt-10'>
+        <img src='#' alt='error' className='w-96'/>
+      </div>
+    )
+  }
+
+
   return (
-    <div>
+    <main className='min-h-screen p-10 lg:p-20 '>
+      <h2 className='text-center text-3xl md:text-4xl lg:text-5xl font-bold mb-10 flex justify-center items-center'>
+        <span className='text-5xl border-b-4 pb-3 font-bold'>
+          Md. Tufael Khan Web Dev Blog
+        </span>
       
-    </div>
+      </h2>
+    </main>
   )
 }

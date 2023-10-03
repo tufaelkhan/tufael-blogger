@@ -3,8 +3,11 @@ let isConnect = false
 
 export const connectToDb = async () => {
     mongoose.set("strictQuery", true)
+    if(isConnect){
+        console.log('using existing DB connection');
+        return ;
+    }
     const db = await mongoose.connect(process.env.MONGODB_URI,{
-        dbName: process.env.DB_USER,
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

@@ -83,7 +83,8 @@ export default function Home() {
           )
         }
       </h2>
-      {
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+{
         selectedTags?.length !== 0 && posts?.filter((post) =>{
           return selectedTags.includes(post.tag)
         }).map(post => {
@@ -99,6 +100,7 @@ export default function Home() {
           )
         })
       }
+</div>
     </main>
   )
 }

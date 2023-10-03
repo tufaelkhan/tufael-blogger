@@ -21,16 +21,16 @@ export default function Home() {
     }
   },[])
 
-  if(posts?.length === 0){
-    return <div className='text-center'>no post found...</div>
-  }
-  if(error){
-    return (
-      <div className='text-center text-4xl mt-10'>
-        <img src='#' alt='error' className='w-96'/>
-      </div>
-    )
-  }
+  // if(posts?.length === 0){
+  //   return <div className='text-center'>no post found...</div>
+  // }
+  // if(error){
+  //   return (
+  //     <div className='text-center text-4xl mt-10'>
+  //       <img src='#' alt='error' className='w-96'/>
+  //     </div>
+  //   )
+  // }
 
 
   return (
@@ -39,7 +39,7 @@ export default function Home() {
         <span className='text-5xl border-b-4 pb-3 font-bold'>
           Md. Tufael Khan Web Dev Blog
         </span>
-      
+      <p className='text-lg mt-10 '>Like, share and subscribe for more content</p>
       </h2>
     </main>
   )

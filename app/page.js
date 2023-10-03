@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 // import PostContext from '../context/PostContext'
 import axios from 'axios'
 import Tag from '../component/cards/Tag'
+import { BlogCard } from '@/component/cards/BlogCard'
 
 export default function Home() {
   const [ posts , setPosts ] = useState([
@@ -75,7 +76,7 @@ export default function Home() {
           return selectedTags.includes(post.tag)
         }).map(post => {
           return (
-            <div>hello world</div>
+            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.subtitle} img={post?.image}  />
           )
         })
       }

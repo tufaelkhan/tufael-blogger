@@ -38,3 +38,6 @@ const PostSchema = new Schema({
         required: [true, 'please provide the author image'],
         },
 })
+
+const Post = module.Post || model('Post', PostSchema)
+export default Post

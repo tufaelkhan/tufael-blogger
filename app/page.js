@@ -1,7 +1,7 @@
 "use client"
-import BlogCard from '../component/cards/BlogCard'
+// import BlogCard from '../component/cards/BlogCard'
 import { useState, useEffect, useContext } from 'react'
-import PostContext from '../context/PostContext'
+// import PostContext from '../context/PostContext'
 import axios from 'axios'
 import Tag from '../component/cards/Tag'
 
@@ -58,9 +58,16 @@ export default function Home() {
             )
           ].map((tag, idx) =>{
             return (
-              <Tag key={tag} isSelected={isSelected} setSelectedTags={setSelectedTags}/>
+              <Tag key={tag} tag={tag} isSelected={selectedTags.includes(tag)} setSelectedTags={setSelectedTags}/>
             )
           })
+        }
+        {
+          selectedTags?.length !== 0 && (
+            <button
+            onClick={()=>setSelectedTags([])}
+            className='bg-red-500 text-white py-2 px-4 rounded-md '>clear</button>
+          )
         }
       </h2>
     </main>

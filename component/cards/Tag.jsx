@@ -15,8 +15,10 @@ export const Tag = ({
     }
 
   return (
-    <div className='bg-gray-200 text-gray-600 font-semibold py-1 px-2 rounded-lg hover:shadow-lg transition duration-300 ease-in-out flex items-center justify-center'>
+    <div
+    onClick={()=>setSelectedTags([tag])}
+    className='bg-gray-200 text-gray-600 font-semibold py-1 px-2 rounded-lg hover:shadow-lg transition duration-300 ease-in-out flex items-center justify-center'>
         {tag}
-        </div>
+    </div>
   )
 }

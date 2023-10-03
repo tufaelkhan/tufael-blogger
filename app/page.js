@@ -56,8 +56,10 @@ export default function Home() {
                 return post.tag
               })
             )
-          ].map(tag =>{
-            return <div>{tag}</div>
+          ].map((tag, idx) =>{
+            return (
+              <Tag key={tag} isSelected={isSelected} setSelectedTags={setSelectedTags}/>
+            )
           })
         }
       </h2>

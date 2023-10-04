@@ -35,7 +35,7 @@ export default function Home() {
       try{
         const data = await axios.get('/api/posts')
         console.log(data);
-        // setPosts(data.data)
+        setPosts(data.data)
       }catch(error){
         setError('data not fetching')
       }
@@ -49,7 +49,7 @@ export default function Home() {
   if(error){
     return (
       <div className='text-center text-4xl mt-10'>
-        <img src='#' alt='error' className='w-96'/>
+        <img src='https://img.freepik.com/premium-vector/window-operating-system-error-warning-dialog-window-popup-message-with-system-failure-flat-design_812892-54.jpg' alt='error' className='w-96 h-96 object-cover'/>
       </div>
     )
   }
@@ -91,14 +91,14 @@ export default function Home() {
           return selectedTags.includes(post.tag)
         }).map(post => {
           return (
-            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.image}  />
+            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.img}  />
           )
         })
       }
       {
         selectedTags?.length === 0 && posts?.map(post => {
           return (
-            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.image}  />
+            <BlogCard tag={post?.tag} title={post?.title} subtitle={post?.desc} img={post?.img}  />
           )
         })
       }

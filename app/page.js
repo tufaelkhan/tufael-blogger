@@ -1,7 +1,7 @@
 "use client"
-import BlogCard from '../component/cards/BlogCard'
+// import BlogCard from '../component/cards/BlogCard'
 import { useState, useEffect, useContext } from 'react'
-import PostContext from '../context/PostContext'
+// import PostContext from '../context/PostContext'
 import axios from 'axios'
 import Tag from '../component/cards/Tag'
 import { BlogCard } from '@/component/cards/BlogCard'
@@ -34,11 +34,13 @@ export default function Home() {
     async function fetchData(){
       try{
         const data = await axios.get('/api/posts')
-        setPosts(data.data)
+        console.log(data);
+        // setPosts(data.data)
       }catch(error){
         setError('data not fetching')
       }
     }
+    fetchData()
   },[])
 
   if(posts?.length === 0){

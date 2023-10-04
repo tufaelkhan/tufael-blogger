@@ -3,7 +3,7 @@ import React from 'react'
 
 export const BlogCard = ({ tag, title, img, desc, id}) => {
   return (
-    <div>BlogCard
+    <div>
         <Link href={`/post/${id}`}>
             <div className='rounded-lg object-cover'>
                 <img src={img} alt={title} className='rounded-t-lg object-cover h-40 w-full ' />

@@ -28,7 +28,7 @@ export const Nav = ({posts}) => {
           <div className='flex flex-col absolute bg-white border border-gray-200 rounded-lg mx-auto md:mx-0 mt-2 ' style={{width: "100%"}} >
             {
               filterPosts.map(post => (
-                <Link key={post.id} href={`/post/${post.id}`} className='text-gray-800 hover:text-green-600 transition duration-300 ease-in-out px-4 py-2 ' 
+                <Link key={post._id} href={`/post/${post._id}`} className='text-gray-800 hover:text-green-600 transition duration-300 ease-in-out px-4 py-2 ' 
                 onClick={handlePostClick} >
                   {post.title}
                 </Link>

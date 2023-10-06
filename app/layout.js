@@ -20,8 +20,10 @@ export default function RootLayout({ children }) {
         setPosts,
       }}>
     <html lang="en">
+      <body className={inter.className}>
       <Nav posts={posts} />
-      <body className={inter.className}>{children}</body>
+        {children}
+        </body>
     </html>
       </PostContext.Provider>
   )

@@ -1,34 +1,17 @@
 "use client"
 // import BlogCard from '../component/cards/BlogCard'
 import { useState, useEffect, useContext } from 'react'
-// import PostContext from '../context/PostContext'
 import axios from 'axios'
 import Tag from '../component/cards/Tag'
 import { BlogCard } from '@/component/cards/BlogCard'
+import PostContext from '@/context/PostContext'
 
 export default function Home() {
-  const [ posts , setPosts ] = useState([
-    {
-      title:'new technology learn',
-      subtitle: 'here is learn some next.js and mongoose',
-      image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
-      tag: 'react.js',
-    },
-    {
-      title:'new technology learn',
-      subtitle: 'here is learn some next.js and mongoose',
-      image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
-      tag: 'react.js',
-    },
-    {
-      title:'new technology learn',
-      subtitle: 'here is learn some next.js and mongoose',
-      image: 'https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png',
-      tag: 'react.js',
-    },
-  ])
+  const [ posts , setPosts ] = useState([ ])
   const [ selectedTags, setSelectedTags ] = useState([])
   const [ error, setError ] = useState(null)
+
+  const { setPosts:postContextFunc } = useContext(PostContext)
 
   useEffect(()=>{
     async function fetchData(){
@@ -36,6 +19,7 @@ export default function Home() {
         const data = await axios.get('/api/posts')
         console.log(data);
         setPosts(data.data)
+        postContextFunc(data.data)
       }catch(error){
         setError('data not fetching')
       }

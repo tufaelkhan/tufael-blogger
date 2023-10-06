@@ -21,8 +21,21 @@ export const Nav = ({posts}) => {
         placeholder='search'
         aria-label='search'
         onChange={(e)=> setFilter(e.target.value)}
+        value={filter}
         />
-
+      {
+        filterPosts.length > 0 && (
+          <div className='flex flex-col absolute bg-white border border-gray-200 rounded-lg mx-auto md:mx-0 mt-2 ' style={{width: "100%"}} >
+            {
+              filterPosts.map(post => (
+                <Link key={post.id} href={`/post/${post.id}`} className='text-gray-800 hover:text-green-600 transition duration-300 ease-in-out px-4 py-2 '>
+                  {post.title}
+                </Link>
+              ))
+            }
+          </div>
+        )
+      }
         </div>
     </nav>
   )

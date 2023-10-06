@@ -35,8 +35,20 @@ const page = ({params: (id)}) => {
             <p className="text-xl mt-10 text-gray-500 text-center px-10 ">{post?.subtitle}</p>
             <div className="flex flex-row items-center justify-center w-full gap-5">
             <img src={post?.authorImg} className="w-16 h-16 object-cover object-center rounded-full mt-10"/>
+            <div>
+            <p className="text-xl mt-5 text-gray-500 ">{post?.author}</p>
+            <p className="text-xl mt-5 text-gray-500 ">{post?.date}</p>
             </div>
-
+            </div>
+            {
+                <div className="mt-10 text-xl text-gray-500 md:w-1/2 px-10 flex flex-col gap-10 leading-10 ">
+                    {
+                        post?.content?.map((paragraph, index)=>{
+                            <p key={index}>{paragraph}</p>
+                        })
+                    }
+                </div>
+            }
         </div>
     </div>
   )

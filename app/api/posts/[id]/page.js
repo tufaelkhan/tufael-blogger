@@ -32,6 +32,11 @@ const page = ({params: (id)}) => {
         <img src={post.img} className="w-full h-96 object-cover object-center " alt={post.title}></img>
         <div className="flex flex-col items-center justify-center w-full mt-20 ">
             <h1 className="text-4xl font-bold text-center md:text-left ">{post.title || "no title found for this post"}</h1>
+            <p className="text-xl mt-10 text-gray-500 text-center px-10 ">{post?.subtitle}</p>
+            <div className="flex flex-row items-center justify-center w-full gap-5">
+            <img src={post?.authorImg} className="w-16 h-16 object-cover object-center rounded-full mt-10"/>
+            </div>
+
         </div>
     </div>
   )

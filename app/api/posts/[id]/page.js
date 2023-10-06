@@ -33,11 +33,13 @@ const page = ({params: (id)}) => {
         <div className="flex flex-col items-center justify-center w-full mt-20 ">
             <h1 className="text-4xl font-bold text-center md:text-left ">{post.title || "no title found for this post"}</h1>
             <p className="text-xl mt-10 text-gray-500 text-center px-10 ">{post?.subtitle}</p>
-            <div className="flex flex-row items-center justify-center w-full gap-5">
+            <div className="flex flex-row items-center justify-center w-full gap-5 mt-10 ">
             <img src={post?.authorImg} className="w-16 h-16 object-cover object-center rounded-full mt-10"/>
             <div>
-            <p className="text-xl mt-5 text-gray-500 ">{post?.author}</p>
-            <p className="text-xl mt-5 text-gray-500 ">{post?.date}</p>
+            <p className="text-xl mt-1 text-gray-500 ">{post?.author}</p>
+            <p className="text-xl mt-1 text-gray-500 ">
+                {new Date(post?.date).toLocaleDateString()}
+            </p>
             </div>
             </div>
             {
